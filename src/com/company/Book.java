@@ -1,20 +1,15 @@
 package com.company;
 
-import static com.company.Author.authorName;
-import static com.company.Author.authorSurname;
-
 public class Book {
-    private String authorName;
-    private String authorSurname;
-    Author author = new Author(authorName, authorSurname);
+
+    private Author author;
     private String bookName;
     private static int publishingYear;
-
-    public Book(String bookName, int publishingYear, String authorName, String authorSurname) {
+    public Book(String bookName, int publishingYear, Author author) {
         this.bookName = bookName;
         this.publishingYear = publishingYear;
-        this.authorName = Author.authorName;
-        this.authorSurname = Author.authorSurname;}
+        this.author = author;
+    }
 
     public String getBookName() {
         return this.bookName;
