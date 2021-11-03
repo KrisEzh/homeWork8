@@ -1,8 +1,6 @@
 package com.company;
 
 
-import static com.company.Author.authorName;
-
 public class Main {
 
     private static Author author;
@@ -22,6 +20,26 @@ public class Main {
         System.out.println("idiot.getPublishingYear() = " + idiot.getPublishingYear());
 
 
+        Book[] books = new Book[5];
+        addNewBook(books, idiot);
+        addNewBook(books,harryPotter);
+        printBooks(books, idiot, harryPotter,author);
+    }
+
+
+
+    public static Book[] addNewBook(Book[] books, Book book) {
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] == null)
+                books[i] = book;
+            break;
+        } return books; }
+
+
+    public static void printBooks(Book[] books, Book idiot, Book book, Author author) {
+        for(int i=0; i< books.length; i++) {
+            System.out.println(author.getAuthorName() + " " + author.getAuthorSurname() + ":" + book.getPublishingYear() + ":" + book.getPublishingYear());
+        }
     }
 
 

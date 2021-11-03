@@ -18,8 +18,8 @@ public class Book {
         return this.publishingYear;
     }
 
-    public static void setPublishingYear(int publishingYear) {
-        Book.publishingYear = publishingYear;
+    public void setPublishingYear(int publishingYear) {
+        this.publishingYear = publishingYear;
     }
 
 }
