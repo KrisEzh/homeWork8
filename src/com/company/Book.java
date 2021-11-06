@@ -3,21 +3,26 @@ package com.company;
 import java.util.Objects;
 
 public class Book {
-    private Author author;
-    private String bookName;
+    private final Author author;
+    private final String bookName;
     private int publishingYear;
 
-    public Book(String bookName, int publishingYear, Author author) {
+    public Book(Author author, String bookName, int publishingYear) {
+        this.author = author;
         this.bookName = bookName;
         this.publishingYear = publishingYear;
-        this.author = author;
+
 
     }
 
-    public String getBookName() {
+    public Author getAuthor() {
+        return this.author;
+    }
+
+    public   String getBookName() {
         return this.bookName;
     }
-    public int getPublishingYear() {
+    public  int getPublishingYear() {
         return this.publishingYear;
     }
 
@@ -36,12 +41,12 @@ public class Book {
             return false;
         }
         Book book = (Book) other;
-        return bookName.equals(book.bookName);
+        return Objects.equals(bookName, author) && Objects.equals(bookName, author);
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName);
+        return Objects.hash(bookName,author);
     }
 }

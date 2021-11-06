@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Author {
 
-    public static String authorName;
-    public static String authorSurname;
+    private final String authorName;
+    private final String authorSurname;
 
     public Author(String authorName, String authorSurname) {
         this.authorName = authorName;
@@ -28,7 +28,7 @@ public class Author {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorName);
+        return Objects.hash(authorName, authorSurname);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class Author {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
         Author author = (Author) other;
-        return authorName.equals(author.authorName);
+        return Objects.equals(authorName, author.authorName) && Objects.equals(authorName, author.authorName);
     }
 }
